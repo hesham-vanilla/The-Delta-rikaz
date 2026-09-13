@@ -85,6 +85,8 @@ STOPS.forEach((_, i) => {
   }
 });
 const totalVh = segments.reduce((sum, s) => sum + s.vh, 0);
+const dwellByStop = new Map();
+segments.forEach(seg => { if(seg.type === 'dwell') dwellByStop.set(seg.stop, seg); });
 
 // ---------- DOM ----------
 const reel = document.getElementById('reel');
@@ -252,6 +254,22 @@ function update(){
     cum += seg.vh;
   }
   localProgress = Math.min(1, Math.max(0, localProgress));
+
+  // Viewport heights are rarely round numbers, so sub-pixel rounding can land
+  // us at, say, 99.98% through a transition instead of exactly 0% into the
+  // next dwell — which would paint the last extracted animation frame
+  // instead of the real still image it's supposed to settle on. Snap the
+  // classification itself when we're this close to either edge.
+  const BOUNDARY_EPS = 0.01;
+  if(active.type === 'trans'){
+    if(localProgress <= BOUNDARY_EPS){
+      active = dwellByStop.get(active.from);
+      localProgress = 0;
+    } else if(localProgress >= 1 - BOUNDARY_EPS){
+      active = dwellByStop.get(active.to);
+      localProgress = 0;
+    }
+  }
 
   if(active.type === 'dwell'){
     renderStop(active.stop);
