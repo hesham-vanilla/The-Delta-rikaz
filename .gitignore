@@ -1,0 +1,11 @@
+# Source footage — not used by the live site (frames are extracted into assets/transitions)
+animation/*.mp4
+
+# Old placeholder assets from earlier iterations, unused by the current site
+assets/frames/
+assets/stills/
+assets/video/
+assets/photos/
+
+# Scratch/test files
+test-scrub.html

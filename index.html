@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Delta — Khobar, by Rikaz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#" data-stop="1">THE DELTA</a>
+  <nav class="nav__links">
+    <a href="#" data-stop="1">Business</a>
+    <a href="#" data-stop="2">High Street</a>
+    <a href="#" data-stop="3">Promenade</a>
+    <a href="#" data-stop="4">Al Noor</a>
+    <a href="#" data-stop="5">Residences</a>
+    <a href="#" data-stop="6">Pool Club</a>
+    <a href="#" data-stop="7">Park</a>
+    <a href="#" data-stop="8">Boutique</a>
+    <a href="#" data-stop="9">Evenings</a>
+  </nav>
+  <a class="nav__cta" href="#" data-stop="outro">Register Interest</a>
+  <button class="nav__burger" id="burger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" data-stop="1">Business</a>
+  <a href="#" data-stop="2">High Street</a>
+  <a href="#" data-stop="3">Promenade</a>
+  <a href="#" data-stop="4">Al Noor</a>
+  <a href="#" data-stop="5">Residences</a>
+  <a href="#" data-stop="6">Pool Club</a>
+  <a href="#" data-stop="7">Park</a>
+  <a href="#" data-stop="8">Boutique</a>
+  <a href="#" data-stop="9">Evenings</a>
+  <a href="#" data-stop="outro" class="mobile-menu__cta">Register Interest</a>
+</div>
+
+<main id="scroller">
+
+  <div class="reel" id="reel">
+    <div class="stage" id="stage">
+      <img class="stage__img" id="stageImg" alt="" />
+      <canvas class="stage__canvas" id="stageCanvas"></canvas>
+      <div class="stage__scrim"></div>
+      <div class="stage__content">
+        <p class="stage__eyebrow" id="stageEyebrow"></p>
+        <h1 class="stage__title" id="stageTitle"></h1>
+        <p class="stage__text" id="stageText"></p>
+      </div>
+      <div class="stage__meta">
+        <span class="stage__count" id="stageCount"></span>
+        <span class="stage__label" id="stageLabel"></span>
+      </div>
+    </div>
+  </div>
+
+  <section class="panel panel--outro" id="outro" data-label="Enquire">
+    <div class="outro">
+      <p class="outro__kicker">People. Places. Possibilities.</p>
+      <h2 class="outro__logo">THE DELTA</h2>
+      <p class="outro__tag">A master plan by Rikaz, in the heart of Khobar.</p>
+      <p class="outro__copy">Nine districts, one walkable plan — offices, homes, schools, retail and open space designed around the people who'll actually live in them.</p>
+      <a class="outro__mail" href="mailto:enquiries@rikaz.example">enquiries@rikaz.example</a>
+      <p class="outro__foot">THE DELTA · KHOBAR · DEVELOPED BY RIKAZ</p>
+    </div>
+  </section>
+
+</main>
+
+<div class="progress" id="progress">
+  <div class="progress__track">
+    <div class="progress__fill" id="progressFill"></div>
+    <div class="progress__ticks">
+      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
